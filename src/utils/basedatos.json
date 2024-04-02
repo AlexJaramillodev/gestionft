@@ -1,0 +1,483 @@
+[
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 123456789,
+    "nombre": "Juan Perez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Neumonía",
+    "medicoRemitente": "Dr. Martinez",
+    "prestacion": "Cuidados intensivos",
+    "ips": "IPS Hospital Universitario"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 987654321,
+    "nombre": "María Rodriguez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de cabeza",
+    "medicoRemitente": "Dra. Lopez",
+    "prestacion": "Medicación",
+    "ips": "IPS Salud Total"
+  },
+  {
+    "tipoDocumento": "Cédula de extranjería",
+    "numeroDocumento": 456789123,
+    "nombre": "Carlos Gutierrez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Fractura de brazo",
+    "medicoRemitente": "Dr. Sanchez",
+    "prestacion": "Radiografía y tratamiento",
+    "ips": "IPS Sanitas"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 123456789,
+    "nombre": "Juan Perez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Neumonía",
+    "medicoRemitente": "Dr. Martinez",
+    "prestacion": "Cuidados intensivos",
+    "ips": "IPS Hospital Universitario"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 987654321,
+    "nombre": "María Rodriguez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de cabeza",
+    "medicoRemitente": "Dra. Lopez",
+    "prestacion": "Medicación",
+    "ips": "IPS Salud Total"
+  },
+  {
+    "tipoDocumento": "Cédula de extranjería",
+    "numeroDocumento": 456789123,
+    "nombre": "Carlos Gutierrez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Fractura de brazo",
+    "medicoRemitente": "Dr. Sanchez",
+    "prestacion": "Radiografía y tratamiento",
+    "ips": "IPS Sanitas"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 135792468,
+    "nombre": "Ana Martínez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Infección de garganta",
+    "medicoRemitente": "Dr. García",
+    "prestacion": "Antibióticos",
+    "ips": "IPS Colmédica"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 246813579,
+    "nombre": "Pedro Ramirez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Accidente cerebrovascular",
+    "medicoRemitente": "Dr. Fernandez",
+    "prestacion": "Cuidados intensivos",
+    "ips": "IPS Cafam"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 369258147,
+    "nombre": "Luisa Sánchez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Quemadura de segundo grado",
+    "medicoRemitente": "Dra. Martinez",
+    "prestacion": "Curación y vendaje",
+    "ips": "IPS Colsubsidio"
+  },
+  {
+    "tipoDocumento": "Cédula de extranjería",
+    "numeroDocumento": 975318462,
+    "nombre": "Laura Gómez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Resfriado común",
+    "medicoRemitente": "Dr. Rodriguez",
+    "prestacion": "Analgésicos y reposo",
+    "ips": "IPS Compensar"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 582461379,
+    "nombre": "Diego Hernández",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Apéndicitis aguda",
+    "medicoRemitente": "Dr. Gonzalez",
+    "prestacion": "Cirugía de emergencia",
+    "ips": "IPS Coomeva"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 147925836,
+    "nombre": "Camila López",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Traumatismo craneoencefálico",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Tomografía y observación",
+    "ips": "IPS Sura"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 638741925,
+    "nombre": "Daniel Pérez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Fiebre alta",
+    "medicoRemitente": "Dra. Gómez",
+    "prestacion": "Medicación y reposo",
+    "ips": "IPS Nueva EPS"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 259634871,
+    "nombre": "Valentina Ruiz",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Gastritis severa",
+    "medicoRemitente": "Dr. Rodriguez",
+    "prestacion": "Tratamiento y dieta",
+    "ips": "IPS Saludcoop"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 369147258,
+    "nombre": "Santiago Diaz",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de espalda",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Fisioterapia",
+    "ips": "IPS Medimás"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 486325179,
+    "nombre": "Carolina Castro",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Fractura de pierna",
+    "medicoRemitente": "Dr. González",
+    "prestacion": "Inmovilización y rehabilitación",
+    "ips": "IPS Famisanar"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 573924186,
+    "nombre": "Martín Vargas",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Herida profunda en el brazo",
+    "medicoRemitente": "Dra. Martínez",
+    "prestacion": "Sutura y curación",
+    "ips": "IPS Alianza"
+  },
+  {
+    "tipoDocumento": "Cédula de extranjería",
+    "numeroDocumento": 794632581,
+    "nombre": "Gabriela Fernández",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Gripe",
+    "medicoRemitente": "Dr. Gómez",
+    "prestacion": "Reposo y medicación",
+    "ips": "IPS Coosalud"
+  },
+
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 682514937,
+    "nombre": "Julián Martínez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Covid-19",
+    "medicoRemitente": "Dr. Hernández",
+    "prestacion": "Terapia respiratoria",
+    "ips": "IPS Comfandi"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 924761385,
+    "nombre": "Laura García",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Esguince de tobillo",
+    "medicoRemitente": "Dra. Pérez",
+    "prestacion": "Inmovilización y vendaje",
+    "ips": "IPS Comparta"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 813592467,
+    "nombre": "Andrea López",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Infección urinaria",
+    "medicoRemitente": "Dr. Rodríguez",
+    "prestacion": "Antibióticos y análisis",
+    "ips": "IPS Solsalud"
+  },
+  {
+    "tipoDocumento": "Cédula de extranjería",
+    "numeroDocumento": 357924681,
+    "nombre": "Eduardo Gómez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Apnea del sueño",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Monitoreo y tratamiento",
+    "ips": "IPS Saludvida"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 246813579,
+    "nombre": "Gabriel Sánchez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Quemadura de primer grado",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Curación y observación",
+    "ips": "IPS Cajasan"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 639247185,
+    "nombre": "Paula Martínez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Alergia cutánea",
+    "medicoRemitente": "Dra. Gómez",
+    "prestacion": "Medicación y seguimiento",
+    "ips": "IPS Saludcoop"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 529731468,
+    "nombre": "Mateo Rodríguez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Fractura de cadera",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Cirugía y recuperación",
+    "ips": "IPS Cafesalud"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 486321975,
+    "nombre": "Sara González",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Herida en la pierna",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Sutura y curación",
+    "ips": "IPS Saludcoop"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 357961284,
+    "nombre": "Miguel Ramírez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de estómago",
+    "medicoRemitente": "Dra. Martínez",
+    "prestacion": "Medicación y dieta",
+    "ips": "IPS Colsubsidio"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 628417935,
+    "nombre": "Carolina Pérez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Neumonía",
+    "medicoRemitente": "Dr. González",
+    "prestacion": "Tratamiento intensivo",
+    "ips": "IPS Coomeva"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 719536824,
+    "nombre": "Daniel Gómez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Fractura de muñeca",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Radiografía y tratamiento",
+    "ips": "IPS Sura"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 472891536,
+    "nombre": "Valentina Martínez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de garganta",
+    "medicoRemitente": "Dra. Gómez",
+    "prestacion": "Analgésicos y reposo",
+    "ips": "IPS Nueva EPS"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 835724169,
+    "nombre": "David López",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Apéndice inflamado",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Cirugía de emergencia",
+    "ips": "IPS Sanitas"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 591683247,
+    "nombre": "Juliana Sánchez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Quemadura de segundo grado",
+    "medicoRemitente": "Dra. Pérez",
+    "prestacion": "Curación y vendaje",
+    "ips": "IPS Compensar"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 369258147,
+    "nombre": "Mateo Gómez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Resfriado",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Medicación y reposo",
+    "ips": "IPS Salud Total"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 682514937,
+    "nombre": "Julián Martínez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Covid-19",
+    "medicoRemitente": "Dr. Hernández",
+    "prestacion": "Terapia respiratoria",
+    "ips": "IPS Comfandi"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 924761385,
+    "nombre": "Laura García",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Esguince de tobillo",
+    "medicoRemitente": "Dra. Pérez",
+    "prestacion": "Inmovilización y vendaje",
+    "ips": "IPS Comparta"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 813592467,
+    "nombre": "Andrea López",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Infección urinaria",
+    "medicoRemitente": "Dr. Rodríguez",
+    "prestacion": "Antibióticos y análisis",
+    "ips": "IPS Solsalud"
+  },
+  {
+    "tipoDocumento": "Cédula de extranjería",
+    "numeroDocumento": 357924681,
+    "nombre": "Eduardo Gómez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Apnea del sueño",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Monitoreo y tratamiento",
+    "ips": "IPS Saludvida"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 246813579,
+    "nombre": "Gabriel Sánchez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Quemadura de primer grado",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Curación y observación",
+    "ips": "IPS Cajasan"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 639247185,
+    "nombre": "Paula Martínez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Alergia cutánea",
+    "medicoRemitente": "Dra. Gómez",
+    "prestacion": "Medicación y seguimiento",
+    "ips": "IPS Saludcoop"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 529731468,
+    "nombre": "Mateo Rodríguez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Fractura de cadera",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Cirugía y recuperación",
+    "ips": "IPS Cafesalud"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 486321975,
+    "nombre": "Sara González",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Herida en la pierna",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Sutura y curación",
+    "ips": "IPS Saludcoop"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 357961284,
+    "nombre": "Miguel Ramírez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de estómago",
+    "medicoRemitente": "Dra. Martínez",
+    "prestacion": "Medicación y dieta",
+    "ips": "IPS Colsubsidio"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 628417935,
+    "nombre": "Carolina Pérez",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Neumonía",
+    "medicoRemitente": "Dr. González",
+    "prestacion": "Tratamiento intensivo",
+    "ips": "IPS Coomeva"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 719536824,
+    "nombre": "Daniel Gómez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Fractura de muñeca",
+    "medicoRemitente": "Dr. López",
+    "prestacion": "Radiografía y tratamiento",
+    "ips": "IPS Sura"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 472891536,
+    "nombre": "Valentina Martínez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Dolor de garganta",
+    "medicoRemitente": "Dra. Gómez",
+    "prestacion": "Analgésicos y reposo",
+    "ips": "IPS Nueva EPS"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 835724169,
+    "nombre": "David López",
+    "Gestion": "Hospitalización",
+    "Diagnostico": "Apéndice inflamado",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Cirugía de emergencia",
+    "ips": "IPS Sanitas"
+  },
+  {
+    "tipoDocumento": "Cédula de ciudadanía",
+    "numeroDocumento": 591683247,
+    "nombre": "Juliana Sánchez",
+    "Gestion": "Urgencias",
+    "Diagnostico": "Quemadura de segundo grado",
+    "medicoRemitente": "Dra. Pérez",
+    "prestacion": "Curación y vendaje",
+    "ips": "IPS Compensar"
+  },
+  {
+    "tipoDocumento": "Tarjeta de identidad",
+    "numeroDocumento": 369258147,
+    "nombre": "Mateo Gómez",
+    "Gestion": "Consulta externa",
+    "Diagnostico": "Resfriado",
+    "medicoRemitente": "Dr. Martínez",
+    "prestacion": "Medicación y reposo",
+    "ips": "IPS Salud Total"
+  }
+]
