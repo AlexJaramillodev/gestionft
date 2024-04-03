@@ -11,21 +11,13 @@ export function Formulario (){
     const [verUsuario, guardarcarUsuario] = useState("")
     const [verContraseña, guardarContraseña] = useState("")
 
-
-
-
-
-
-
     let enrutador = useNavigate()
 
     function procesarFormulario (evento){
         evento.preventDefault()
-
         enrutador("/gestion")
 
     }
-
 
     return(
         <>
@@ -33,9 +25,10 @@ export function Formulario (){
             <section className="container ">
                  <div className="row justify-content-center text-center">
                     <div className="col-12 col-md-6">
-                        <img className="img-fluid" src="../../src/assets/images/tigresolo.jpg" alt="logo sura" />
-                        <form onSubmit={procesarFormulario} className="border rounded p-4 mb-5">
-                            <h2>Iniciar sesion</h2>
+                        <img className="img-fluid " src="../../src/assets/images/tigresolo.jpg" alt="logo sura" />
+                        <form onSubmit={procesarFormulario} className="border p-4 mb-5">
+                            <h2 className="titleContain">Iniciar sesion</h2>
+                            <h2 className='lbltitleContain'><span >Sucursal virtual</span></h2>
                                 <div className="input-group mb-3 mt-5">
                                     <span className="input-group-text" id="basic-addon1"><i className="bi bi-person-vcard-fill"></i></span>
                                     <input 
@@ -70,7 +63,7 @@ export function Formulario (){
                                         />
                                 </div>
 
-                                <button type="submit" className="btn btn-primary btn-lg">Ingresar</button>
+                                <button type="submit" className="btn btn-primary btn-lg btnColor">Ingresar</button>
                         </form>
                     </div>
                 </div>
