@@ -1,37 +1,73 @@
 import json
 import random
+from faker import Faker
+from datetime import datetime
+
+# Inicializar Faker para generar nombres y apellidos ficticios
+faker = Faker()
+
+# Lista de tipos de documento
+tipos_documento = ["C", "T", "E", "R"]
+
+# Lista de tipos de plan
+tipos_plan = ["Poliza", "PBS", "Particular"]
+
+# Lista de sedes
+sedes = ["Industriales", "Calle 100", "Chipichape"]
+
+# Lista de tipos de gestión
+tipos_gestion = ["Acondicionamiento Fisco", "Evaluacion Hidroterapia", "Evaluacion miembro superior"]
+
+# Lista de diagnósticos
+diagnosticos = ["0 - NO APLICA",
+                "A000 - COLERA DEBIDO A VIBRIO CHOLERAE O1 BIOTIPO CHOLERAE",
+                "A001 - COLERA DEBIDO A VIBRIO CHOLERAE O1 BIOTIPO EL TOR",
+                "A009 - COLERA NO ESPECIFICADO",
+                "A010 - FIEBRE TIFOIDEA",
+                "A011 - FIEBRE PARATIFOIDEA A",
+                "A012 - FIEBRE PARATIFOIDEA B",
+                "A013 - FIEBRE PARATIFOIDEA C"]
+
+# Función para generar una fecha de gestión ficticia
+def generar_fecha_gestion():
+    return faker.date_this_decade().strftime('%Y-%m-%d')  # Convertir la fecha a string
+
+# Función para generar un número de documento ficticio
+def generar_numero_documento():
+    return str(random.randint(1000000, 999999999))
 
 # Función para generar un nombre ficticio
 def generar_nombre():
-    nombres = ["Juan", "María", "Luis", "Ana", "Pedro", "Sofía", "Diego", "Laura", "Carlos", "Marta",
-           "Andrés", "Camila", "Javier", "Valentina", "Fernando", "Isabella", "Alejandro", "Gabriela",
-           "Daniel", "Lucía", "Manuel", "Juliana", "Miguel", "Daniela", "José", "Paula", "Ricardo", "Elena",
-           "Felipe", "Verónica"]
-    apellidos = ["Gómez", "Rodríguez", "Pérez", "Martínez", "González", "Hernández", "López", "Díaz", "Sánchez", "Torres",
-             "Ramírez", "Flores", "Vázquez", "Rojas", "Reyes", "Morales", "Gutiérrez", "Ortiz", "Castillo", "Jiménez",
-             "Ruiz", "Álvarez", "Fernández", "García", "Núñez", "Cruz", "Mendoza", "Aguilar", "Silva", "Ramos"]
-    return random.choice(nombres) + " " + random.choice(apellidos)
+    return faker.first_name()
 
-# Generar 50,000 datos ficticios
+# Función para generar un apellido ficticio
+def generar_apellido():
+    return faker.last_name()
+
+# Función para generar un médico remitente ficticio
+def generar_medico_remitente():
+    return faker.name()
+
+# Generar datos ficticios
 datos = []
-for _ in range(50):
+for _ in range(100):  # Crear 100 registros ficticios
     dato = {
-        "Nombre_completo": generar_nombre(),
-        "Documento_de_identidad": str(random.randint(100000000, 999999999)),
-        "Salario": round(random.uniform(1000, 5000), 2),
-        "Ciudad": random.choice(["Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", "Cucuta", "Caldas", "Tolima", "Bucaramanga", "Bello", "Pereira", "Armenia", "Envigado", "Rionegro"]),
-        "Tipo_de_independiente": random.choice(["Independiente", "Prestación de servicio", "Voluntario"]),
-        "Sector_económico": random.choice(["Tecnología", "Salud", "Educación", "Comercio", "Manufactura", "Finanzas", "Servicios", "Turismo",
-                       "Construcción", "Transporte", "Agricultura", "Medios de comunicación", "Energía", "Ingeniería",
-                       "Entretenimiento", "Alimentos y bebidas", "Automoción", "Bienes raíces", "Textil", "Software",
-                       "Telecomunicaciones", "Consultoría", "Seguros", "Minería", "Moda", "Biotecnología", "Aeroespacial",
-                       "Arte y cultura", "Publicidad"]),
-        "Nivel_de_riesgo": random.randint(1, 5)
+        "fecha_gestion": generar_fecha_gestion(),
+        "tipo_documento": random.choice(tipos_documento),
+        "numero_documento": generar_numero_documento(),
+        "tipo_plan": random.choice(tipos_plan),
+        "sede": random.choice(sedes),
+        "nombre": generar_nombre(),
+        "apellido": generar_apellido(),
+        "tipo_gestion": random.choice(tipos_gestion),
+        "diagnostico": random.choice(diagnosticos),
+        "medico_remitente": generar_medico_remitente()
     }
     datos.append(dato)
 
 # Escribir los datos en un archivo JSON
-with open("datosPrueba.json", "w") as archivo:
+with open("datosGestionFT.json", "w") as archivo:
     json.dump(datos, archivo, indent=2)
 
-print("Se han generado 50,000 datos ficticios y se han guardado en el archivo 'datos.json'.")
+print("Se han generado los datos ficticios y se han guardado en el archivo 'datos.json'.")
+
