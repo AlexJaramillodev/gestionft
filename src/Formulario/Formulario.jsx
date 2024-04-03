@@ -3,6 +3,9 @@ import { Navbar } from "../Navbar/Navbar"
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
+
+import basedatosusuariossura from "../utils/basedatosusuariossura.json"
 
 
 export function Formulario (){
@@ -15,8 +18,26 @@ export function Formulario (){
 
     function procesarFormulario (evento){
         evento.preventDefault()
-        enrutador("/gestion")
+        //Buscamos coincidencia entre lo que escribe el usuario
+        //en el formulario y el json de la BD
+        let busqueda = basedatosusuariossura.find(function(usuariosura){
+            return(
+                usuariosura.cedula==verCedula && usuariosura.usuario==verUsuario && usuariosura.contraseña==verContraseña
+            )
+        })
 
+        console.log(busqueda)
+        if(busqueda == undefined){
+            Swal.fire({
+                icon: "error",
+                title: "Usuario o clave inválida",
+                text: "Algo salió mal",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+        }else{
+            //Voy a enrutar otro componente(¿Como lanzo un componente desde cero?)
+            enrutador("/gestion",{state:{usuario:busqueda}})
+        }
     }
 
     return(
@@ -25,7 +46,7 @@ export function Formulario (){
             <section className="container ">
                  <div className="row justify-content-center text-center">
                     <div className="col-12 col-md-6">
-                        <img className="img-fluid " src="../../src/assets/images/tigresolo.jpg" alt="logo sura" />
+                        <img className="img-fluid  mt-5" src="../../src/assets/images/tigresolo.jpg" alt="logo sura" />
                         <form onSubmit={procesarFormulario} className="border p-4 mb-5">
                             <h2 className="titleContain">Iniciar sesion</h2>
                             <h2 className='lbltitleContain'><span >Sucursal virtual</span></h2>

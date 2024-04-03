@@ -1,12 +1,19 @@
 import './Gestion.css'
 import '../Navbar/Navbar'
-import basedatos from "../utils/datosGestionFT.json"
+//import basedatos from "../utils/datosGestionFT.json"
+import {DatosJson} from "../utils/datosGestionFT"
 
 import { useState } from 'react'
 import { Navbar } from '../Navbar/Navbar'
 
+import { useLocation } from "react-router-dom";
+
 
 export function Gestion (){
+
+    let location=useLocation() //activo el hook
+    let usuario= location.state.usuario
+    console.log(usuario)
 
     let array = []
 
@@ -40,14 +47,28 @@ export function Gestion (){
         itemSelected = selectedOption.toLowerCase()
     }
 
-    const filtrarPorPalabra = selectedOption !== '' ? basedatos.filter(datos =>
+    const filtrarPorPalabra = selectedOption !== '' ? DatosJson.filter(datos =>
         datos[itemSelected].toLowerCase().includes(verFiltro.toLowerCase())
-    ) : basedatos;
+    ) : DatosJson;
     
 
     return(
         <>
-        <Navbar></Navbar>
+         <nav className="navbar shadow-sm border-bottom-3 nav-color" >
+            <div className="container-fluid"
+        >
+          <a className="navbar-brand" href="#">
+            <img 
+              src="../../src/assets/images/logo-sura.svg"
+              alt="Bootstrap"
+              width="30"
+              height="24"
+              className="img-logo"
+            />
+          </a>
+          <p className='navusuario me-2'>Usuario: {usuario.usuario}</p>
+        </div>
+      </nav>
         <section className='container my-5 p-5'>
             
             <div>

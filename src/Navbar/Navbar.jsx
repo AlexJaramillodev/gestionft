@@ -1,6 +1,12 @@
 import "./Navbar.css";
+import { Formulario } from "../Formulario/Formulario";
+
+
 
 export function Navbar() {
+
+  
+
   return (
     <>
       <nav className="navbar shadow-sm border-bottom-3 nav-color" >
@@ -14,6 +20,9 @@ export function Navbar() {
               className="img-logo"
             />
           </a>
+          {
+            
+          }
         </div>
       </nav>
     </>
