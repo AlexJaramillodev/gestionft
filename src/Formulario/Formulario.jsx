@@ -26,7 +26,6 @@ export function Formulario (){
             )
         })
 
-        console.log(busqueda)
         if(busqueda == undefined){
             Swal.fire({
                 icon: "error",
@@ -42,7 +41,17 @@ export function Formulario (){
 
     return(
         <>
-        <Navbar></Navbar>
+            <nav className="navbar shadow-sm border-bottom-3 nav-color" >
+                <div className="container-fluid">
+                    <img 
+                        src="../../src/assets/images/logoBlanco.svg"
+                        alt="Bootstrap"
+                        width="30"
+                        height="24"
+                        className="img-logo"
+                    />
+                </div>
+            </nav>
             <section className="container ">
                  <div className="row justify-content-center text-center">
                     <div className="col-12 col-md-6">

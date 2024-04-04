@@ -1,5 +1,38 @@
+.nav-color{
+    background-color: #0033A0;
+}
+
+.figura {
+    position: relative;
+    width: auto;
+    height: 40px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    border-right: 2px #e3e829 solid;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.portal-header-title[_ngcontent-ng-c1972906931] h1[_ngcontent-ng-c1972906931] {
+    margin: 0;
+    padding: 0;
+    font-family: Barlow, sans-serif;
+    font-size: 22px;
+    color: white;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.portal-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .btnColor{
     background-color: #0033A0;
+    font-weight: bold;
 }
 
 
@@ -24,8 +57,24 @@
 }
 
 .navusuario{    
-    color: #0033A0;
-    font-size: 1.5rem;
+    color: white;
+    font-size: 1.3rem;
 }
+
+.portal-header-title[_ngcontent-ng-c1972906931] {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 30px;
+}
+
+.img-logo{
+    width: 139px;
+    height: 49px;
+}
+
+figure {
+    margin: 0 0 0rem;
+}
+
 
 
