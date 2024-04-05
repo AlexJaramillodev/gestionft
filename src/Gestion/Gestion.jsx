@@ -2,15 +2,14 @@ import './Gestion.css'
 import '../Navbar/Navbar'
 //import basedatos from "../utils/datosGestionFT.json"
 import {DatosJson} from "../utils/datosGestionFT1"
+import {diagnosticos} from "../utils/diagnosticos"
 import { useRef, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 
 import { useLocation } from "react-router-dom";
 import Swal from 'sweetalert2'
 
-
 export function Gestion (){
-
     let location=useLocation() //activo el hook
     let usuario= location.state.usuario
     const formularioRef = useRef(null);
@@ -29,9 +28,11 @@ export function Gestion (){
     const [selectedOption, setSelectedOption] = useState('');
 
     const [datosTabla, setDatosTabla] = useState(DatosJson);
+    const [suggestions, setSuggestions] = useState([]);
 
     function procesarGestion (evento){
         evento.preventDefault()
+
         //Buscamos coincidencia entre lo que escribe el usuario
         //en el formulario y el json de la BD
         if (!isNaN(verDocumento)) {
@@ -47,9 +48,7 @@ export function Gestion (){
                     diagnostico: verDiagnostico,
                     medico_remitente: verMedicoRem
                 }
-            DatosJson.push(NewObject)
-            setDatosTabla([...DatosJson]);
-                     
+
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
                   confirmButton: "btn btn-success",
@@ -71,6 +70,8 @@ export function Gestion (){
                     text: "Tú información ha sido guardada.",
                     icon: "success"
                   });
+                  DatosJson.push(NewObject)
+                  setDatosTabla([...DatosJson]);
                   formularioRef.current.reset(); //Limpia el formulario
                 } else if (
                   result.dismiss === Swal.DismissReason.cancel
@@ -82,8 +83,6 @@ export function Gestion (){
                   });
                 }
             });
-            
-
         }else{
             Swal.fire({
                 icon: "error",
@@ -92,6 +91,24 @@ export function Gestion (){
               });
         }
     }
+
+    //Para iniciar proceso de busqueda del diagnostico
+    const handleChange = (event) => {
+        const value = event.target.value;
+        guardarDiagnostico(value); // Actualizar el estado del input
+    
+        // Lógica para filtrar y actualizar las sugerencias
+        const filteredSuggestions = diagnosticos.filter((diagnostico) =>
+          diagnostico.toLowerCase().includes(value.toLowerCase())
+        );
+        setSuggestions(filteredSuggestions);
+      };
+    
+      const handleSelectSuggestion = (suggestion) => {
+        guardarDiagnostico(suggestion); // Actualizar el valor del input con la sugerencia seleccionada
+        setSuggestions([]); // Limpiar las sugerencias
+    };
+    //-----------
 
     let itemSelected
 
@@ -256,21 +273,41 @@ export function Gestion (){
                                 <div className="row my-2">
                                     <div className="input-group mb-3">
                                         <span className="input-group-text" id="basic-addon1">Diagnostico</span>
-                                        <input 
-                                            className="form-control search border"  
-                                            aria-label="Diagnostico" aria-describedby="basic-addon1"
-                                            id="autoComplete-input"
-                                            type="text" 
-                                            dir="ltr"  
-                                            autoCorrect="off" 
-                                            autoComplete="off" 
-                                            autoCapitalize="off" 
-                                            maxLength="2048" 
-                                            tabIndex="1" 
-                                            spellCheck="false" 
-                                            name='diagnostico'
-                                            onChange={function(evento){guardarDiagnostico(evento.target.value)}} 
-                                            required  />
+                                        {
+                                            <div className='containerDiagnos'>
+                                                <input 
+                                                    className="form-control search border"  
+                                                    aria-label="Diagnostico" aria-describedby="basic-addon1"
+                                                    id="autoComplete-input"
+                                                    type="text"
+                                                    dir="ltr"
+                                                    autoCapitalize="off" 
+                                                    maxLength="2048" 
+                                                    tabIndex="1"
+                                                    spellCheck="false"
+                                                    value={verDiagnostico} 
+                                                    onChange={handleChange}
+                                                    required
+                                                    placeholder="Ingresa una palabra"
+                                                />
+                                                
+                                                {/* Mostrar sugerencias si hay */}
+                                                {suggestions.length > 0 && (
+                                                    <ul>
+                                                    {suggestions.map((suggestion, index) => (
+                                                        <li 
+                                                        key={index} 
+                                                        onClick={() => handleSelectSuggestion(suggestion)}
+                                                        style={{ cursor: 'pointer' }}
+                                                        >
+                                                        {suggestion}
+                                                        </li>
+                                                    ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        }
+    
                                     </div>
                                 </div>
 
