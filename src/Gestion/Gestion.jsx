@@ -1,7 +1,7 @@
 import './Gestion.css'
 import '../Navbar/Navbar'
 //import basedatos from "../utils/datosGestionFT.json"
-import {DatosJson} from "../utils/datosGestionFT1"
+import {DatosJson} from "../utils/datosGestionFT"
 import {diagnosticos} from "../utils/diagnosticos"
 import { useRef, useState } from 'react'
 import { useNavigate } from "react-router-dom"
@@ -25,7 +25,7 @@ export function Gestion (){
     const [verDiagnostico, guardarDiagnostico] = useState("");
     const [verMedicoRem, guardarMedicoRem] = useState("");
     const [verFiltro, modificarFiltro] = useState('');
-    const [selectedOption, setSelectedOption] = useState('');
+    const [VerFiltro, GuardarFiltro] = useState('');
 
     const [datosTabla, setDatosTabla] = useState(DatosJson);
     const [suggestions, setSuggestions] = useState([]);
@@ -112,15 +112,24 @@ export function Gestion (){
 
     let itemSelected
 
-    if (selectedOption == "numero_documento" || selectedOption == "diagnostico") {
-        itemSelected = selectedOption
+    if (VerFiltro == "numero_documento" || VerFiltro == "diagnostico") {
+        itemSelected = VerFiltro
     }else{
-        itemSelected = selectedOption.toLowerCase()
+        itemSelected = VerFiltro.toLowerCase()
     }
 
-    const filtrarPorPalabra = selectedOption !== '' ? datosTabla.filter(datos =>
+    const filtrarPorPalabra = VerFiltro !== '' ? datosTabla.filter(datos =>
         datos[itemSelected].toLowerCase().includes(verFiltro.toLowerCase())
     ) : datosTabla;
+
+    //paginacion
+        const [VerPaginaInicial, GuargarPaginaInicial] = useState(1);
+        const [itemsPerPage, setItemsPerPage] = useState(10);
+    
+        const indexOfLastItem = VerPaginaInicial * itemsPerPage;
+        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    
+        const itemsToShow = filtrarPorPalabra.slice(indexOfFirstItem, indexOfLastItem);
 
     return(
         <>
@@ -337,8 +346,8 @@ export function Gestion (){
                         <div className='contain-Filter'>
                             <select 
                             className='ContainerLista m-3'
-                            value={selectedOption} 
-                            onChange={function(evento){setSelectedOption(evento.target.value)}}
+                            value={VerFiltro} 
+                            onChange={function(evento){GuardarFiltro(evento.target.value)}}
                             >
                                 <option value="">Seleccione la opción de filtro</option>
                                 <option value="fecha_gestion">Fecha Gestión</option>
@@ -397,7 +406,7 @@ export function Gestion (){
                                         )
 
                                     })
-                                    */
+                                    
                                     filtrarPorPalabra.map((info, index) => (
                                         <tr key={index}>
                                             <td>{info.fecha_gestion}</td>
@@ -412,9 +421,34 @@ export function Gestion (){
                                             <td>{info.medico_remitente}</td>
                                         </tr>
                                     ))
+                                    */
+
+                                    itemsToShow.map((info, index) => (
+                                        <tr key={index}>
+                                          <td>{info.fecha_gestion}</td>
+                                          <td>{info.tipo_documento}</td>
+                                          <td>{info.numero_documento}</td>
+                                          <td>{info.tipo_plan}</td>
+                                          <td>{info.sede}</td>
+                                          <td>{info.nombre}</td>
+                                          <td>{info.apellido}</td>
+                                          <td>{info.tipo_gestion}</td>
+                                          <td>{info.diagnostico}</td>
+                                          <td>{info.medico_remitente}</td>
+                                        </tr>
+                                      ))
                                 }
                             </tbody>
-                        </table>     
+                        </table>
+                        <div>
+                            <button className="btn btn-primary btnColor m-2" onClick={() => GuargarPaginaInicial(VerPaginaInicial - 1)} disabled={VerPaginaInicial === 1}>
+                                Anterior
+                            </button>
+                            <span>Página {VerPaginaInicial}</span>
+                            <button className="btn btn-primary btnColor" onClick={() => GuargarPaginaInicial(VerPaginaInicial + 1)} disabled={indexOfLastItem >= filtrarPorPalabra.length}>
+                                Siguiente
+                            </button>
+                        </div>
                     </div>            
                 </div>
             </section>
