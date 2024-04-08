@@ -60,7 +60,7 @@ export function Gestion (){
                 title: "¿Estás seguro de que los datos son correctos?",
                 icon: "warning",
                 showCancelButton: true,
-                confirmButtonText: "Yes, Estoy seguro",
+                confirmButtonText: "Si, Estoy seguro",
                 cancelButtonText: "No, cancelar!",
                 reverseButtons: true
               }).then((result) => {
@@ -124,12 +124,14 @@ export function Gestion (){
 
     //paginacion
         const [VerPaginaInicial, GuargarPaginaInicial] = useState(1);
-        const [itemsPerPage, setItemsPerPage] = useState(10);
+        const [itemsPerPage, setItemsPerPage] = useState(7);
     
         const indexOfLastItem = VerPaginaInicial * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     
         const itemsToShow = filtrarPorPalabra.slice(indexOfFirstItem, indexOfLastItem);
+
+        console.log("info" + itemsToShow.length)
 
     return(
         <>
@@ -374,6 +376,7 @@ export function Gestion (){
                         <table className='table table-responsive table-hover table-striped'>
                             <thead>
                                 <tr>
+                                    <th>Usuario Gestor</th>
                                     <th>Fecha Gestion</th>
                                     <th>Tipo Documento</th>
                                     <th>N° Documento</th>
@@ -425,16 +428,16 @@ export function Gestion (){
 
                                     itemsToShow.map((info, index) => (
                                         <tr key={index}>
-                                          <td>{info.fecha_gestion}</td>
-                                          <td>{info.tipo_documento}</td>
-                                          <td>{info.numero_documento}</td>
-                                          <td>{info.tipo_plan}</td>
-                                          <td>{info.sede}</td>
-                                          <td>{info.nombre}</td>
-                                          <td>{info.apellido}</td>
-                                          <td>{info.tipo_gestion}</td>
-                                          <td>{info.diagnostico}</td>
-                                          <td>{info.medico_remitente}</td>
+                                            <td>{info.fecha_gestion}</td>                                          <td>{info.fecha_gestion}</td>
+                                            <td>{info.tipo_documento}</td>
+                                            <td>{info.numero_documento}</td>
+                                            <td>{info.tipo_plan}</td>
+                                            <td>{info.sede}</td>
+                                            <td>{info.nombre}</td>
+                                            <td>{info.apellido}</td>
+                                            <td>{info.tipo_gestion}</td>
+                                            <td>{info.diagnostico}</td>
+                                            <td>{info.medico_remitente}</td>
                                         </tr>
                                       ))
                                 }
@@ -442,11 +445,11 @@ export function Gestion (){
                         </table>
                         <div>
                             <button className="btn btn-primary btnColor m-2" onClick={() => GuargarPaginaInicial(VerPaginaInicial - 1)} disabled={VerPaginaInicial === 1}>
-                                Anterior
+                            <i class="bi bi-arrow-left"></i>
                             </button>
                             <span>Página {VerPaginaInicial}</span>
-                            <button className="btn btn-primary btnColor" onClick={() => GuargarPaginaInicial(VerPaginaInicial + 1)} disabled={indexOfLastItem >= filtrarPorPalabra.length}>
-                                Siguiente
+                            <button className="btn btn-primary btnColor" onClick={() =>GuargarPaginaInicial(VerPaginaInicial + 1)} disabled={indexOfLastItem >= filtrarPorPalabra.length}>
+                            <i class="bi bi-arrow-right"></i>
                             </button>
                         </div>
                     </div>            

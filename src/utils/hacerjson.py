@@ -7,6 +7,9 @@ from datetime import datetime
 faker = Faker()
 
 # Lista de tipos de documento
+usuario_gestor = ["andrgohr", "claulelo", "adrijaag", "pedrper"]
+
+# Lista de tipos de documento
 tipos_documento = ["C", "T", "E", "R"]
 
 # Lista de tipos de plan
@@ -52,6 +55,7 @@ def generar_medico_remitente():
 datos = []
 for _ in range(100):  # Crear 100 registros ficticios
     dato = {
+        "Usuario_Gestor": usuario_gestor(),
         "fecha_gestion": generar_fecha_gestion(),
         "tipo_documento": random.choice(tipos_documento),
         "numero_documento": generar_numero_documento(),
@@ -66,7 +70,7 @@ for _ in range(100):  # Crear 100 registros ficticios
     datos.append(dato)
 
 # Escribir los datos en un archivo JSON
-with open("datosGestionFT.json", "w") as archivo:
+with open("datosGestionFTReal.json", "w") as archivo:
     json.dump(datos, archivo, indent=2)
 
 print("Se han generado los datos ficticios y se han guardado en el archivo 'datos.json'.")
