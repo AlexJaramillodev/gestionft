@@ -14,6 +14,8 @@ export function Gestion (){
     let usuario= location.state.usuario
     const formularioRef = useRef(null);
 
+    let enrutador = useNavigate()
+
     const [verFecha, guardarFecha] = useState("");
     const [verTipoDocumento, guardarTipoDocumento] = useState("");
     const [verDocumento, guardarDocumento] = useState("");
@@ -131,7 +133,10 @@ export function Gestion (){
     
         const itemsToShow = filtrarPorPalabra.slice(indexOfFirstItem, indexOfLastItem);
 
-        console.log("info" + itemsToShow.length)
+        const salir = () => {
+            // Redireccionar a la página de inicio de sesión
+            enrutador('/');
+        };
 
     return(
         <>
@@ -150,7 +155,14 @@ export function Gestion (){
                         </div>
                     </div>
 
-                    <p className='navusuario me-2'>Usuario: {usuario.usuario}</p>
+                    <div className='containUserExit'>
+                        <p className='navusuario me-2'>Usuario: {usuario.usuario}</p>
+                        <button className="btn btn-primary btnColor btnSV" onClick={salir}>
+                            <i class="bi bi-box-arrow-right btniconExit"></i>
+                        </button>
+                    </div>
+                   
+
                 </div>
             </nav>
             <section className='container my-5 p-5'>

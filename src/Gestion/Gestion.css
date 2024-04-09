@@ -35,6 +35,10 @@
     font-weight: bold;
 }
 
+.btnSV{
+    border-color: #0033A0;
+}
+
 
 .contain-Filter{
     display: flex;
@@ -59,6 +63,15 @@
 .navusuario{    
     color: white;
     font-size: 1.3rem;
+    margin-bottom: 8PX;
+}
+
+.containUserExit{
+    display: flex;
+}
+
+.btniconExit{
+    font-size: 1.2rem;
 }
 
 .portal-header-title[_ngcontent-ng-c1972906931] {
