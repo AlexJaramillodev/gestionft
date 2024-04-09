@@ -55,7 +55,7 @@ def generar_medico_remitente():
 datos = []
 for _ in range(100):  # Crear 100 registros ficticios
     dato = {
-        "Usuario_Gestor": usuario_gestor(),
+        "Usuario_Gestor": random.choice(usuario_gestor),
         "fecha_gestion": generar_fecha_gestion(),
         "tipo_documento": random.choice(tipos_documento),
         "numero_documento": generar_numero_documento(),

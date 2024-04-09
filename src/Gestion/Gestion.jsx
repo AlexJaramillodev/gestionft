@@ -13,9 +13,10 @@ export function Gestion (){
     let location=useLocation() //activo el hook
     let usuario= location.state.usuario
     const formularioRef = useRef(null);
-
     let enrutador = useNavigate()
 
+
+    const [verUsuarioGestor, GuardarUsuarioGestor] = useState(usuario.usuario);
     const [verFecha, guardarFecha] = useState("");
     const [verTipoDocumento, guardarTipoDocumento] = useState("");
     const [verDocumento, guardarDocumento] = useState("");
@@ -31,14 +32,17 @@ export function Gestion (){
 
     const [datosTabla, setDatosTabla] = useState(DatosJson);
     const [suggestions, setSuggestions] = useState([]);
+    
 
     function procesarGestion (evento){
         evento.preventDefault()
 
+        console.log(verUsuarioGestor)
         //Buscamos coincidencia entre lo que escribe el usuario
         //en el formulario y el json de la BD
         if (!isNaN(verDocumento)) {
             let NewObject = {
+                    Usuario_Gestor: verUsuarioGestor,
                     fecha_gestion: verFecha,
                     tipo_documento: verTipoDocumento,
                     numero_documento: verDocumento,
@@ -114,12 +118,13 @@ export function Gestion (){
 
     let itemSelected
 
-    if (VerFiltro == "numero_documento" || VerFiltro == "diagnostico") {
+    if (VerFiltro == "numero_documento" || VerFiltro == "diagnostico"  || VerFiltro == "Usuario_Gestor") {
         itemSelected = VerFiltro
     }else{
         itemSelected = VerFiltro.toLowerCase()
     }
 
+    console.log(itemSelected)
     const filtrarPorPalabra = VerFiltro !== '' ? datosTabla.filter(datos =>
         datos[itemSelected].toLowerCase().includes(verFiltro.toLowerCase())
     ) : datosTabla;
@@ -132,6 +137,8 @@ export function Gestion (){
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     
         const itemsToShow = filtrarPorPalabra.slice(indexOfFirstItem, indexOfLastItem);
+
+        const numpag =  Math.ceil(filtrarPorPalabra.length / itemsPerPage)
 
         const salir = () => {
             // Redireccionar a la página de inicio de sesión
@@ -165,8 +172,7 @@ export function Gestion (){
 
                 </div>
             </nav>
-            <section className='container my-5 p-5'>
-                
+            <section className='container my-4 p-5'>
                 <div>
                     <div className="nav nav-tabs" id="nav-tab" role="tablist">
                         <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Ingresar Gestion</button>
@@ -336,7 +342,7 @@ export function Gestion (){
 
                                 <div className="row my-2">
                                 <div className="input-group mb-3">
-                                        <span className="input-group-text" id="basic-addon1">Medico Remitente</span>
+                                        <span className="input-group-text" id="basic-addon1">Médico Remitente</span>
                                         <input 
                                             type="text" 
                                             className="form-control"  
@@ -348,7 +354,7 @@ export function Gestion (){
                                 </div>
                                 <div className="row my-4">
                                     <div className="col-12">
-                                        <button className="btn btn-primary btnColor" type="submit">Crear Gestion</button>
+                                        <button className="btn btn-primary btnColor" type="submit">Crear Gestión</button>
                                     </div>
                                 </div>
                             </form>    
@@ -357,13 +363,16 @@ export function Gestion (){
                     </div>
 
                     <div className="tab-pane fade border border-top-0" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabIndex="0">
+                        
                         <div className='contain-Filter'>
+                            <p className='datosEncontrados mt-4'>Cantidad de datos: {filtrarPorPalabra.length}</p>
                             <select 
                             className='ContainerLista m-3'
                             value={VerFiltro} 
                             onChange={function(evento){GuardarFiltro(evento.target.value)}}
-                            >
+                            >   
                                 <option value="">Seleccione la opción de filtro</option>
+                                <option value="Usuario_Gestor">Usuario gestor</option>
                                 <option value="fecha_gestion">Fecha Gestión</option>
                                 <option value="tipo_documento">Tipo documento</option>
                                 <option value="numero_documento">N° Documento</option>
@@ -396,14 +405,14 @@ export function Gestion (){
                                     <th>Sede</th>
                                     <th>Nombres</th>
                                     <th>Apellido</th>
-                                    <th>Tipo Gestion</th>
-                                    <th>Diagnostico</th>
-                                    <th>Medico Remitente</th>
+                                    <th>Tipo Gestión</th>
+                                    <th>Diagnóstico</th>
+                                    <th>Médico Remitente</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {   
-                                    /*
+                                  /*
                                     basedatos.map(function(info){
                                         return(
                                             <tr>
@@ -437,10 +446,10 @@ export function Gestion (){
                                         </tr>
                                     ))
                                     */
-
                                     itemsToShow.map((info, index) => (
                                         <tr key={index}>
-                                            <td>{info.fecha_gestion}</td>                                          <td>{info.fecha_gestion}</td>
+                                            <td>{info.Usuario_Gestor}</td>
+                                            <td>{info.fecha_gestion}</td>
                                             <td>{info.tipo_documento}</td>
                                             <td>{info.numero_documento}</td>
                                             <td>{info.tipo_plan}</td>
@@ -459,7 +468,7 @@ export function Gestion (){
                             <button className="btn btn-primary btnColor m-2" onClick={() => GuargarPaginaInicial(VerPaginaInicial - 1)} disabled={VerPaginaInicial === 1}>
                             <i class="bi bi-arrow-left"></i>
                             </button>
-                            <span>Página {VerPaginaInicial}</span>
+                            <span>Página {VerPaginaInicial} - { numpag}</span>
                             <button className="btn btn-primary btnColor" onClick={() =>GuargarPaginaInicial(VerPaginaInicial + 1)} disabled={indexOfLastItem >= filtrarPorPalabra.length}>
                             <i class="bi bi-arrow-right"></i>
                             </button>

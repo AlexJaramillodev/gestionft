@@ -30,7 +30,6 @@ export function Formulario (){
             Swal.fire({
                 icon: "error",
                 title: "Usuario o clave inválida",
-                text: "Algo salió mal",
                 footer: '<a href="#">Why do I have this issue?</a>'
               });
         }else{
